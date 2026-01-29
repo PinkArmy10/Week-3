@@ -1,0 +1,144 @@
+/**
+ * target all elements
+ *
+ * @format
+ */
+
+h3 ~ button {
+  font-size: xx-large;
+}
+
+* {
+  font-size: small;
+}
+
+/* target all image tags, img */
+img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 1px;
+  right: 1 px;
+  border-radius: 30px;
+}
+
+nav {
+  text-align: center;
+  box-shadow: 12px 12px 6px grey;
+  height: 2.5em;
+  margin-bottom: 2em;
+}
+
+/* nav a {
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  font: bolder;
+  font-size: larger;
+} */
+
+/* class of wrapper */
+.wrapper {
+  border: 5px groove green;
+  width: 90%;
+  height: 90vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* class of box */
+.box {
+  outline: 3px solid pink;
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  padding: 2px;
+  position: relative;
+}
+
+body > ul a {
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+/* ------- COMBINATOR SELECTORS -------- */
+/* descendant selector, all h3 tags in the element of class box */
+.box h3 {
+  background-color: beige;
+}
+
+/* h3 tags that are direct children of the element of class box */
+.box > h3 {
+  outline: 3px dashed green;
+}
+
+/* adjacent selector, targets the paragraph immediately after the h4 */
+h4 + p {
+  border: 2px solid rebeccapurple;
+}
+
+/* sibling selector, targets the elements that are siblings of the h4, after the h4 */
+h4 ~ p {
+  background-color: lightgoldenrodyellow;
+}
+
+/* ---- ATTRIBUTE SELECTORS -----*/
+/* targets element with attribute, seasonal */
+article[seasonal] {
+  font-weight: bolder;
+  color: green;
+}
+/* Target element with attribute of special-value, with string of 'Tues' */
+[special-value*="Tues"] {
+  visibility: hidden;
+}
+
+/* target the paragraphs with attribute of sale, beginning with "en" */
+p[sale^="en"] {
+  border: 3px dotted orange;
+}
+
+/* target img elements with  src attribute ending in png */
+img[src$=".png"] {
+  border: 5px solid red;
+}
+
+img:not([alt]) {
+  outline: 10px dashed red;
+}
+
+/* ------------ pseudo-class selectors ------------ */
+nav a:link {
+  background-color: pink;
+}
+
+nav a:focus {
+  background-color: blue;
+  color: yellow;
+}
+
+nav a:hover {
+  border: 2px solid green;
+}
+
+img:hover {
+  transform: scale(2.5);
+}
+
+button:hover {
+  transform: scale(2.5);
+}
+
+/* pseudo element selectors */
+p::first-letter {
+  font-size: larger;
+  text-transform: capitalize;
+}
+
+[sale*="en"]::before {
+  content: "\02600";
+  font-size: large;
+}
